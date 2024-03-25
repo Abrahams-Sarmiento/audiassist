@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "497b0406-a609-45d0-a2b0-72db2919ea88"
+      }
+    },
+    "owner": "zannisdf"
   }
 }
