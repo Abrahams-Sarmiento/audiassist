@@ -12,7 +12,7 @@ export const Agregarusuario = () => (
     
     <View>
       <FormContainer>
-        <FormTitle>Crear Usuairo</FormTitle>
+        <FormTitle>Crear Usuario</FormTitle>
   
         <Field>
           <Label>Correo Electronico</Label>
