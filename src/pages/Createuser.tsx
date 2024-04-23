@@ -6,6 +6,7 @@ import { Label } from '../components/label';
 import { CustomInput } from '../components/custom-input';
 import { CustomButton } from '../components/custom-button';
 
+
 export const Createuser = () => (
     <View>
       <FormContainer>
@@ -20,7 +21,7 @@ export const Createuser = () => (
           <CustomInput placeholder="Audifono1234...." />
         </Field>
         <View style={styles.buttonContainer}>
-          <CustomButton title="Enviar" />
+          <CustomButton title="Continuar" />
         </View>
       </FormContainer>
     </View>
