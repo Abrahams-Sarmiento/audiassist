@@ -7,21 +7,19 @@ import { CustomInput } from '../components/custom-input';
 import { CustomButton } from '../components/custom-button';
 
 
-export const Createuser = () => (
+export const CrearCalendario = () => (
+    
+    
     <View>
       <FormContainer>
-        <FormTitle>Registrarme</FormTitle>
+        <FormTitle>Crear Calendario</FormTitle>
   
         <Field>
-          <Label>Correo Electronico</Label>
-          <CustomInput placeholder="Audifono@hotmail.com" />
-        </Field>
-        <Field>
-          <Label>Contraseña</Label>
-          <CustomInput placeholder="Audifono1234...." />
+          <Label>Correo Electronico del paciente </Label>
+          <CustomInput placeholder="Paciente@gmail.com" />
         </Field>
         <View style={styles.buttonContainer}>
-          <CustomButton title="Continuar" />
+          <CustomButton title="Crear Calendario" />
         </View>
       </FormContainer>
     </View>

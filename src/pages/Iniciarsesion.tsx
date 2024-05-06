@@ -7,10 +7,10 @@ import { CustomInput } from '../components/custom-input';
 import { CustomButton } from '../components/custom-button';
 
 
-export const Createuser = () => (
+export const Iniciarsesion = () => (
     <View>
       <FormContainer>
-        <FormTitle>Registrarme</FormTitle>
+        <FormTitle>Iniciar Sesión</FormTitle>
   
         <Field>
           <Label>Correo Electronico</Label>
@@ -21,7 +21,7 @@ export const Createuser = () => (
           <CustomInput placeholder="Audifono1234...." />
         </Field>
         <View style={styles.buttonContainer}>
-          <CustomButton title="Continuar" />
+          <CustomButton title="Iniciar Sesión" />
         </View>
       </FormContainer>
     </View>

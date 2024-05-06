@@ -7,21 +7,23 @@ import { CustomInput } from '../components/custom-input';
 import { CustomButton } from '../components/custom-button';
 
 
-export const Createuser = () => (
+export const Agregarusuario = () => (
+    
+    
     <View>
       <FormContainer>
-        <FormTitle>Registrarme</FormTitle>
+        <FormTitle>Crear Usuario</FormTitle>
   
         <Field>
           <Label>Correo Electronico</Label>
-          <CustomInput placeholder="Audifono@hotmail.com" />
+          <CustomInput placeholder="Paciente@gmail.com" />
         </Field>
         <Field>
-          <Label>Contraseña</Label>
-          <CustomInput placeholder="Audifono1234...." />
+          <Label>Contraseña Temporal</Label>
+          <CustomInput placeholder="Audifono1234..." />
         </Field>
         <View style={styles.buttonContainer}>
-          <CustomButton title="Continuar" />
+          <CustomButton title="Crear Usuario" />
         </View>
       </FormContainer>
     </View>

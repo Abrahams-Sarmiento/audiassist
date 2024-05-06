@@ -7,21 +7,23 @@ import { CustomInput } from '../components/custom-input';
 import { CustomButton } from '../components/custom-button';
 
 
-export const Createuser = () => (
+export const AgregarAudifono = () => (
+    
+    
     <View>
       <FormContainer>
-        <FormTitle>Registrarme</FormTitle>
+        <FormTitle>Crear Audífono</FormTitle>
   
         <Field>
-          <Label>Correo Electronico</Label>
-          <CustomInput placeholder="Audifono@hotmail.com" />
+          <Label>Modelo </Label>
+          <CustomInput placeholder="Unitron Stride P dura 600" />
         </Field>
         <Field>
-          <Label>Contraseña</Label>
-          <CustomInput placeholder="Audifono1234...." />
+          <Label>Información</Label>
+          <CustomInput placeholder="Modelo de gama de entrada de la serie Stride P Dura" />
         </Field>
         <View style={styles.buttonContainer}>
-          <CustomButton title="Continuar" />
+          <CustomButton title="Crear Audífono" />
         </View>
       </FormContainer>
     </View>
