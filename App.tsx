@@ -1,13 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import { CustomInput } from './src/components/custom-input';
-import { CustomButton } from './src/components/custom-button';
-import { FormContainer } from './src/components/form-container';
-import { FormTitle } from './src/components/form-title';
-import { Label } from './src/components/label';
-import { Field } from './src/components/field';
 import { ExamplePage } from './src/pages/example-page';
+import { updateAuthState } from './src/utils/update-auth-state';
 
-export default function App() {  
+updateAuthState();
+
+export default function App() {
   return (
     <View style={styles.container}>
       <ExamplePage />
