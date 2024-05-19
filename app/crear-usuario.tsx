@@ -1,30 +1,30 @@
 import { Alert, View } from 'react-native';
-import { UserForm } from '../src/components/user-form';
-import { useState } from 'react';
+import { UserForm, UserFormSubmit } from '../src/components/user-form';
+import { client } from '../src/db/client';
+import { router } from 'expo-router';
 
 const CrearUsuario = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const handleEmailChange = (value: string) => setEmail(value);
-  const handlePasswordChange = (value: string) => setPassword(value);
-  const handleSubmitPress = () => {
-    setIsLoading(true);
+  const handleSubmit: UserFormSubmit = async (values) => {
+    const { data, error } = await client
+      .from('users')
+      .insert(values)
+      .select()
+      .single();
 
-    Alert.alert('Creating user');
+    if (error || !data) {
+      Alert.alert('Algo salió mal, inténtelo nuevamente.');
+      return;
+    }
 
-    setIsLoading(false);
+    router.replace(`/usuarios/${data.id}`);
   };
 
   return (
     <View>
       <UserForm
         title="Crear usuario"
-        email={email}
-        password={password}
-        onEmailChange={handleEmailChange}
-        onPasswordChange={handlePasswordChange}
-        onSubmitPress={handleSubmitPress}
+        actionTitle="Crear usuario"
+        onSubmit={handleSubmit}
       />
     </View>
   );

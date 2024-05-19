@@ -70,7 +70,14 @@ export const Navbar = () => {
         ) : null}
       </View>
       <Animated.View style={[styles.menu, menuStyle]}>
-        <Text style={styles.menuItem}>Inicio</Text>
+        <Pressable
+          onPress={() => {
+            router.push('/listado-usuarios');
+            toggleMenu();
+          }}
+        >
+          <Text style={styles.menuItem}>Usuarios</Text>
+        </Pressable>
         <Pressable
           onPress={() => {
             router.push('/listado-audifonos');
