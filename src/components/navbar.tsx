@@ -38,11 +38,12 @@ export const Navbar = () => {
 
   const menuStyle = {
     opacity: animation,
+    zIndex: menuOpen ? 1 : -1,
     transform: [
       {
         translateY: animation.interpolate({
           inputRange: [0, 1],
-          outputRange: [-100, 0], // Adjust -100 based on your menu height
+          outputRange: [-200, 0], // Adjust -100 based on your menu height
         }),
       },
     ],
@@ -85,6 +86,14 @@ export const Navbar = () => {
           }}
         >
           <Text style={styles.menuItem}>Audífonos</Text>
+        </Pressable>
+        <Pressable
+          onPress={() => {
+            router.push('/listado-calendarios');
+            toggleMenu();
+          }}
+        >
+          <Text style={styles.menuItem}>Calendarios</Text>
         </Pressable>
         <Pressable
           onPress={() => {

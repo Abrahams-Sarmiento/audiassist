@@ -1,11 +1,27 @@
-import { ReactNode } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ReactNode, useId } from 'react';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-export const ListElement = ({ children }: { children: ReactNode }) => (
-  <View style={styles.listElement}>
-    <Text style={styles.listElementText}>{children}</Text>
-  </View>
-);
+export const ListElement = ({
+  children,
+  actions = [],
+}: {
+  children: ReactNode;
+  actions?: { label: string; onPress: () => unknown }[];
+}) => {
+  const id = useId();
+  return (
+    <View style={styles.listElement}>
+      <Text style={styles.listElementText}>{children}</Text>
+      <View style={styles.actions}>
+        {actions.map((action, index) => (
+          <Pressable style={styles.actionItem} key={`${id}-${index}`} onPress={action.onPress}>
+            <Text>{action.label}</Text>
+          </Pressable>
+        ))}
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   listElement: {
@@ -16,6 +32,14 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   listElementText: {
-    color: '#444'
+    color: '#444',
+  },
+  actions: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  actionItem: {
+    paddingHorizontal: 8,
+    paddingTop: 12,
   }
 });

@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import { client } from '../db/client';
 import { router } from 'expo-router';
 import { Navbar } from './navbar';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 import { UserProvider } from '../context/user';
 
 export const Page = ({ children }: { children: ReactNode }) => {
@@ -32,10 +32,12 @@ export const Page = ({ children }: { children: ReactNode }) => {
 
   return (
     <SafeAreaView>
-      <UserProvider session={session}>
-        <Navbar />
-        {children}
-      </UserProvider>
+      <ScrollView>
+        <UserProvider session={session}>
+          <Navbar />
+          {children}
+        </UserProvider>
+      </ScrollView>
     </SafeAreaView>
   );
 };
