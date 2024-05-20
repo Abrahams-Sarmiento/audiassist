@@ -16,10 +16,7 @@ const CrearCalendario = () => {
       .select()
       .single();
 
-    console.log('payload', { ...values, ownerId: session?.user.id })
-
     if (error || !data) {
-      console.log('create error', error);
       Alert.alert('Algo salió mal, inténtelo nuevamente.');
       return;
     }
