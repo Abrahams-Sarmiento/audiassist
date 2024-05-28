@@ -97,6 +97,14 @@ export const Navbar = () => {
         </Pressable>
         <Pressable
           onPress={() => {
+            router.push('/ayuda');
+            toggleMenu();
+          }}
+        >
+          <Text style={styles.menuItem}>Ayuda</Text>
+        </Pressable>
+        <Pressable
+          onPress={() => {
             client.auth.signOut();
             toggleMenu();
           }}
